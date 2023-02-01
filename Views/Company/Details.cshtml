@@ -1,0 +1,46 @@
+﻿@model Promobeta.Models.Company
+
+@{
+    ViewBag.Title = @Model.CompanyName;
+}
+
+<div class="card">
+    <div class="card-header p-2">
+        <h5 class="mb-0">@Model.TradingName</h5>
+    </div>
+    <div class="card-body p-2">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.RegistrationDate)</dt>
+            <dd class="col-sm-9">@Model.RegistrationDate</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CompanyName)</dt>
+            <dd class="col-sm-9">@Model.CompanyName</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.RegistrationNumber)</dt>
+            <dd class="col-sm-9">@Model.RegistrationNumber</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CellphoneNumber)</dt>
+            <dd class="col-sm-9">@Model.CellphoneNumber</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Address)</dt>
+            <dd class="col-sm-9">@Model.Address</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.AddressNumber)</dt>
+            <dd class="col-sm-9">@Model.AddressNumber</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Complement)</dt>
+            <dd class="col-sm-9">@Model.Complement</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ZipCode)</dt>
+            <dd class="col-sm-9">@Model.ZipCode</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.City.Name)</dt>
+            <dd class="col-sm-9">@Model.City.Name - @Model.City.State.Initials</dd>
+        </dl>
+
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Id })
+    </div>
+</div>

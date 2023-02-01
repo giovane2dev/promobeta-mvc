@@ -1,0 +1,67 @@
+﻿@model Promobeta.Models.UnitPromotions
+
+@{
+    ViewBag.Title = "Nova promoção";
+}
+
+<div class="row">
+    <div class="col-6 mx-auto">
+        <div class="card">
+            <div class="card-header p-2">
+                <h5 class="mb-0">Nova promoção</h5>
+            </div>
+            <div class="card-body p-2">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CompanyUnitsId, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("CompanyUnitsId", null, htmlAttributes: new { @class = "form-control form-control-sm" })
+                        @Html.ValidationMessageFor(model => model.CompanyUnitsId, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label" })                        
+                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Active, htmlAttributes: new { @class = "control-label" })
+                        <label class="switch d-block" for="Active">
+                            <input type="checkbox" id="Active" name="Active" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-sm btn-dark d-flex flex-row align-items-center" type="submit">
+                            <i class="fa fa-check mr-1"></i>Criar nova promoção
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
